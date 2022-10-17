@@ -52,10 +52,10 @@
 >>>>>> * Agrupar por variables categóricas ("Seasons","Holiday") y observar la frecuencia de nuestra variable objetivo.
 >>>>>> * Ejecución de modelos de:
 
->>>>>>>> ** Regresión Lineal: Modelo para analizar y predecir comportamientos entre una variable dependiente e independiente.
->>>>>>>> ** Lasso: Modelo de regresión que contrae ciertos parámetros a 0, selecciona variables que optimicen el resultado imponiendo penalización sobre coeficientes del modelo.
->>>>>>>> ** Random Forest: Modelo de regresión y clasificación basado en árboles de decisión.
->>>>>>>> ** XGBoost: Modelo optimizado de regresión y clasificación basado en técnica "Gradient Boosting", potenciador de resultados Random Forest.
+>>>>>>>>    ** Regresión Lineal: Modelo para analizar y predecir comportamientos entre una variable dependiente e independiente.
+>>>>>>>>    ** Lasso: Modelo de regresión que contrae ciertos parámetros a 0, selecciona variables que optimicen el resultado imponiendo penalización sobre coeficientes del modelo.
+>>>>>>>>    ** Random Forest: Modelo de regresión y clasificación basado en árboles de decisión.
+>>>>>>>>    ** XGBoost: Modelo optimizado de regresión y clasificación basado en técnica "Gradient Boosting", potenciador de resultados Random Forest.
 
 >>>>>> * Comparación de resultados obtenidos por cada uno de los modelos aplicados.
 
