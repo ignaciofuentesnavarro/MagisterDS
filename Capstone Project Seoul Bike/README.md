@@ -19,7 +19,7 @@
 
 >> Para responder a la interrogante del grupo de inversión utilizaremos una muestra del año 2017 que contiene variables climáticas observadas a cada hora del día y cuántas bicicletas fueron arrendadas bajo esas condiciones. El dataset fue obtenido desde Public Bikes y su nombre es SeoulBikeData.csv.
 
->> Esperamos que exista correlación positiva entre la temperatura (°C) y la cantidad de bicicletas arrendadas, por ende una mayor afluencia en la utilización del servicio en verano. Bajo el supuesto que la jornada laboral en Seúl es similar a la de Santiago, se espera que exista mayor cantidad de arrendamientos entre las 8:00 y 9:00 hrs. (hora de entrada) y entre las 18:00 y 19:00 hrs.
+>> Esperamos que exista correlación positiva entre la temperatura (°C) y la cantidad de bicicletas arrendadas, por ende una mayor afluencia en la utilización del servicio en verano. Bajo el supuesto que la jornada laboral en Seúl es similar a la de Santiago, se espera que exista mayor cantidad de arrendamientos entre las 8:00 y 9:00 hrs. (hora de entrada) y entre las 18:00 y 19:00 hrs. (hora de salida).
 
 
 ## Estructura de archivos y carpetas:
