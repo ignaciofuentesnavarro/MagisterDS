@@ -11,7 +11,7 @@
 
 ## Descripción del Proyecto: 
 
->> ### Incidencia de las condiciones climáticas en el arrendamiento de biciletas en Seúl, Corea del Sur.
+>> ### Incidencia de las condiciones climáticas en el arrendamiento de bicicletas en Seúl, Corea del Sur.
 
 ### Problema planteado:
 
@@ -38,10 +38,15 @@
 
 >> #### Archivo limpieza.ipynb: 
 
->>>> Notebook donde detallamos todo el proceso de transformación que se llevó a cabo para conseguir el dataset ubicado en la carpeta "processed". Dentro de los cambios realizados podemos destacar:
+>>>> Notebook donde detallamos todo el proceso de exploración y transformación que se llevó a cabo para conseguir el dataset ubicado en la carpeta "processed". Dentro de los cambios realizados podemos destacar:
 
->>>>>> * Eliminación de variables irrelevantes como: "Functioning Day", "Dew point temperature(°C)"....
->>>>>> * Modicación de formato en la variable "Date" y descomposición.
+>>>>>> * Revisión de valores nulos, únicos, duplicados y el tipo de datos con los que contamos.
+>>>>>> * Eliminación de variables irrelevantes para nuestro análisis como: "Functioning Day" y "Dew point temperature(°C)".
+>>>>>> * Modificación de formato en la variable "Date" y descomposición.
+>>>>>> * Box plot utilizando variables categóricas ("Seasons" y "Holiday") vs nuestra variable dependiente ("Rented Bike Count"). 
+>>>>>> * Visualización de la distribución de los datos utilizando QQ plot.
+>>>>>> * Normalización de variables "Rented Bike Count" y "Wind speed (m/s)" mediante la utilización de de función cuadrática (sqrt).
+>>>>>> * Conversión de variables categóricas a valores numéricos utilizando técnica de "Dummyficación".
 
 >> #### Archivo analisis.ipynb:
  
@@ -77,9 +82,20 @@
 >>>> Resultado obtenido en el archivo reporte.ipynb.
 
 
-## Guía de ejecución de los archivos.ipynb y paquetes utilizados:
+## Guía de ejecución de los archivos.ipynb y librerías utilizadas:
 
- # ***Este ítem será completado al tener los archivos finales***
+>> Todos los notebooks.ipynb vienen con el kernel reiniciado, por lo que, para obtener el output de cada línea de código solo basta correr el kernel.
+
+>> Además, hemos utilizado ciertas librerías y paquetes que podrían no estar instaladas por defecto en la interfaz que se utilice para ejecutar nuestros notebooks. Revisa el detalle a continuación.
+
+>> ### Detalle de librerías utilizadas.
+
+>>>> * Pandas: Manipulación y Transformación de datos.
+>>>> * Numpy: Cálculos numéricos, computación científica y análisis de datos.
+>>>> * Matplotlib: Creación de gráficos.
+>>>> * Seaborn: Creación de gráficos.
+>>>> * Warnings: Control de advertencias, en este caso utiizada para omitir alertas no fatales para el código programado.
+>>>> * Missingno: Visualización de datos faltantes o nulos de manera práctica a través de una matriz. 
 
 
 
