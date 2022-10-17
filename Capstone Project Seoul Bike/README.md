@@ -11,7 +11,7 @@
 
 ## Descripción del Proyecto: 
 
->> ### Incidencia de las condiciones climáticas en el arrendamiento de biciletas en Seúl, Corea del Sur.
+>> ### Incidencia de las condiciones climáticas en el arrendamiento de bicicletas en Seúl, Corea del Sur.
 
 ### Problema planteado:
 
