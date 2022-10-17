@@ -1,6 +1,6 @@
 # Grupo 4: Seoul Bike Dataset
 
-##Integrantes:
+## Integrantes:
 
 >> * Fernando Nachbauer
 >> * Hernán Almonacid
@@ -9,7 +9,7 @@
 >> * Patricio Ramírez
 
 
-##Descripción del Proyecto: 
+## Descripción del Proyecto: 
 
 >> ### Incidencia de las condiciones climáticas en el arrendamiento de biciletas en Seúl, Corea del Sur.
 
@@ -22,19 +22,19 @@
 >> Esperamos que exista correlación positiva entre la temperatura (°C) y la cantidad de bicicletas arrendadas, por ende una mayor afluencia en la utilización del servicio en verano. Bajo el supuesto que la jornada laboral en Seúl es similar a la de Santiago, se espera que exista mayor cantidad de arrendamientos entre las 8:00 y 9:00 hrs. (hora de entrada) y entre las 18:00 y 19:00 hrs.
 
 
-##Estructura de archivos y carpetas:
+## Estructura de archivos y carpetas:
 
-###Carpeta data:
+### Carpeta data:
 
->> ####Carpeta raw: 
+>> #### Carpeta raw: 
 
 >>>> Contiene dataset SeoulBikeData.csv sin ningún tipo de transformación.
 
->> ####Carpeta processed: 
+>> #### Carpeta processed: 
 
 >>>> Contiene dataset transformado y adecuado para obtener el mejor desempeño en nuestro análisis.
  
-###Carpeta notebooks:
+### Carpeta notebooks:
 
 >> #### Archivo limpieza.ipynb: 
 
@@ -70,7 +70,7 @@
 >>>>>> * Supuestos que nos permitirán poner a prueba el modelo elegido y la interpretación de los resultados obtenidos.
 >>>>>> * Conclusiones.
 
-###Carpeta output:
+### Carpeta output:
 
 >> #### Archivo reporte.html: 
 
