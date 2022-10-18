@@ -41,27 +41,31 @@
 >>>> Notebook donde detallamos todo el proceso de exploración y transformación que se llevó a cabo para conseguir el dataset ubicado en la carpeta "processed". Dentro de los cambios realizados podemos destacar:
 
 >>>>>> * Revisión de valores nulos, únicos, duplicados y el tipo de datos con los que contamos.
->>>>>> * Eliminación de variables irrelevantes para nuestro análisis como: "Functioning Day" y "Dew point temperature(°C)".
->>>>>> * Modificación de formato en la variable "Date" y descomposición.
+>>>>>> * Chequeo de correlación entre nuestra variable objetivo "Rented Bike Count" y las demás variables numéricas a través de una matriz.
+>>>>>> * Eliminación de variables irrelevantes para nuestro análisis como: "Functioning Day" = No y "Dew point temperature(°C)". 
+>>>>>> * Descomposición de la variable "Date" en día y mes para luego ser eliminada.
 >>>>>> * Box plot utilizando variables categóricas ("Seasons" y "Holiday") vs nuestra variable dependiente ("Rented Bike Count"). 
->>>>>> * Visualización de la distribución de los datos utilizando QQ plot.
->>>>>> * Normalización de variables "Rented Bike Count" y "Wind speed (m/s)" mediante la utilización de de función cuadrática (sqrt).
->>>>>> * Conversión de variables categóricas a valores numéricos utilizando técnica de "Dummyficación".
+>>>>>> * Visualización de la distribución de variables continuas.
 
 >> #### Archivo analisis.ipynb:
  
->>>> Notebook donde exploramos, analizamos y visualizamos los datos procesados. Podemos encontrar los siguientes análisis:
+>>>> Notebook donde analizamos y aplicamos ciertos modelos de machine learning a los datos procesados. Podemos encontrar los siguientes pasos:
 
->>>>>> * Chequeo de correlación existente entre nuestra variable objetivo "Rented Bike Count" y las demás incluídas a través de una matriz.
->>>>>> * Análisis de distribución de las variables numéricas.
->>>>>> * Agrupar por variables categóricas ("Seasons","Holiday") y observar la frecuencia de nuestra variable objetivo.
+>>>>>> * Conversión de variables categóricas a valores numéricos utilizando técnica de "Dummyficación".
+>>>>>> * Split de dataset en subsets de entrenamiento y testeo.
+>>>>>> * Aplicación de escalamiento estándar a variables numéricas.
 >>>>>> * Ejecución de modelos de:
 
 >>>>>>>>    * Regresión Lineal: Modelo para analizar y predecir comportamientos entre una variable dependiente e independiente.
 >>>>>>>>    * Lasso: Modelo de regresión que contrae ciertos parámetros a 0, selecciona variables que optimicen el resultado imponiendo penalización sobre coeficientes del modelo.
->>>>>>>>    * Random Forest: Modelo de regresión y clasificación basado en árboles de decisión.
+>>>>>>>>    * RandomForest: Modelo de regresión y clasificación basado en árboles de decisión.
 >>>>>>>>    * XGBoost: Modelo optimizado de regresión y clasificación basado en técnica "Gradient Boosting", potenciador de resultados Random Forest.
 
+>>>>>> * Observación de indicadores r cuadrado y errores cuadrados para los modelos de Regresión Lineal, Lasso y RandomForest.
+>>>>>> * Exploración y visualización de coeficientes de regresión Lasso.
+>>>>>> * Utilización de cross-validation y obtención de mejores parámetros para el modelo Lasso.
+>>>>>> * Aplicación de GridSearchCV a modelo de RandomForest.
+>>>>>> * Análisis de factores y características que afectan en mayor medida al modelo RandomForest y graficamos las importancias en base a la media y la desviación.
 >>>>>> * Comparación de resultados obtenidos por cada uno de los modelos aplicados.
 
 >> #### Archivo reporte.ipynb: 
@@ -90,12 +94,67 @@
 
 >> ### Detalle de librerías utilizadas.
 
->>>> * Pandas: Manipulación y Transformación de datos.
+>>>> * Pandas: Análisis y Transformación de datos.
 >>>> * Numpy: Cálculos numéricos, computación científica y análisis de datos.
->>>> * Matplotlib: Creación de gráficos.
->>>> * Seaborn: Creación de gráficos.
+>>>> * Matplotlib: Creación de gráficos estáticos, animados e interactivos.
+>>>> * Seaborn: Librería de alto nivel para creación de gráficos estadísticos.
 >>>> * Warnings: Control de advertencias, en este caso utiizada para omitir alertas no fatales para el código programado.
 >>>> * Missingno: Visualización de datos faltantes o nulos de manera práctica a través de una matriz. 
+>>>> * multiprocessing: Paquete optimizador que permite aprovechar multinúcleos CPU, evitando cuellos de botella computacionales.
+
+>>>> * xgboost:
+
+>>>>>> * xgb: Modelo optimizado de regresión y clasificación basado en técnica "Gradient Boosting", potenciador de resultados Random Forest.
+>>>>>> * plot_importance: Nos permite graficar la importancia de los predictores y visualizar cuáles afectan en mayor medida al modelo.
+
+>>>> * Scikit learn: Una de las librerías más importantes dentro de Machine Learning que nos permite implementar algoritmos de aprendizaje supervisado, no supervisado, validación cruzada, entre otras funcionalidades. Dentro de nuestro proceso de análisis utilizamos los siguientes paquetes:
+
+>>>>>> * Model_selection:
+
+>>>>>>>> * train_test_split: Divide arreglos o matrices en subsets aleatorios destinados al entrenamiento y testeo de modelos implementados. 
+>>>>>>>> * GridSearchCV: A través de la técnica de "Cross Validation", este método nos entrega los mejores hiperparámetros que podemos utilizar en un algoritmo de ML.
+>>>>>>>> * RepeatedKFold: Repetición de K-Fold n veces con diferente aleatoriedad en cada repetición.
+
+>>>>>> * preprocessing:
+
+>>>>>>>> * StandardScaler: Estandarización de datos elimnando la media y escalando la varianza a 1. Requisito para el correcto desempeño de algunos modelos implementados en este proyecto.
+
+>>>>>> * linear_model:
+
+>>>>>>>> * Lasso: Modelo de regresión que contrae ciertos parámetros a 0, selecciona variables que optimicen el resultado imponiendo penalización sobre coeficientes del modelo.
+>>>>>>>> * LinearRegression: Modelo para analizar y predecir comportamientos entre una variable dependiente e independiente.
+>>>>>>>> * LassoCV: Modelo Lasso con ajuste iterativo a lo largo del proceso de regularización de variables.
+
+>>>>>> * metrics:
+
+>>>>>>>> * r2_score: Función de puntuación de regresión, medido en una escala esperada entre 1 y 0, siendo 1 la mejor puntuación posible.
+>>>>>>>> * mean_squared_error: Definido como valor medio de los cuadrados de la diferencia entre predicción y valor observado. Esta función nos permitirá entender cómo se desempeña nuestro modelo de predicción.
+
+>>>>>> * ensemble:
+
+>>>>>>>> * RandomForestRegressor: Metaestimador que nos permite ajustar un número de árboles de decisión en varias submuestras utilizando el promedio para mejorar precisión y controlar overfiting.
+
+>>>>>> * inspection: 
+
+>>>>>>>> * permutation_importance: Técnica de inspección de modelos que nos permite cuantificar la dependencia de una caracterísctica para dicho modelo. Es posible calcularlo n veces con distintas características. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
